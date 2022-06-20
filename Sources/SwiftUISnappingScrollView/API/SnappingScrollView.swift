@@ -53,7 +53,9 @@ where Content : View, Id: Hashable
                 .hidden()
             )
             .onChange(of: self.selection) { newValue in
-                reader.scrollTo(selection, anchor: .center)
+                withAnimation {
+                    reader.scrollTo(selection, anchor: .center)
+                }
             }
         }
        
